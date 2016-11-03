@@ -22,7 +22,7 @@ build:
 requirements:
   build:
     - r
-    - r-rcpp
+    - r-rcpp >=0.12.5
     - gcc                 # [not win]
 
   run:
