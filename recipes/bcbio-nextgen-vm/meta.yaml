@@ -3,12 +3,13 @@ package:
   version: '0.1.0a'
 
 build:
-  number: 86
+  number: 116
   skip: True # [not py27]
 
 source:
-  fn: bcbio-nextgen-vm-5769bcd.tar.gz
-  url: https://github.com/chapmanb/bcbio-nextgen-vm/archive/5769bcd.tar.gz
+  fn: bcbio-nextgen-vm-a890e16.tar.gz
+  url: https://github.com/chapmanb/bcbio-nextgen-vm/archive/a890e16.tar.gz
+  md5: 79febfa4066af9cae500f28a2ca54940
 
 requirements:
   build:
@@ -17,14 +18,23 @@ requirements:
 
   run:
     - python
-    - setuptools
-    - bcbio-nextgen
-    - arvados-cwl-runner
-    - toil
+    - bcbio-nextgen >=1.0.7
+    - ipyparallel >=4.0,<5.0
+    - pysam >=0.13.0
+    - arvados-cwl-runner >=1.0.20171211211613
+    - cwl2wdl
+    - ruamel.yaml >=0.13.0
+    - toil >=3.11.0
+    - rabix-bunny >=1.0.4
     - nodejs
-    - elasticluster
     - nose
+    - sevenbridges-python
+    - synapseclient
+    - dxpy
+    - dx-cwl >=0.1.0a20171231
     - six
+    # Deprecate elasticluster and deps to simplify install
+    # - elasticluster
 
 test:
   imports:

@@ -1,6 +1,6 @@
 package:
   name: cutadapt
-  version: '1.11'
+  version: '1.15'
 
 about:
   home: https://cutadapt.readthedocs.io/
@@ -8,9 +8,9 @@ about:
   summary: 'trim adapters from high-throughput sequencing reads'
 
 source:
-  fn: cutadapt-1.11.tar.gz
-  url: https://pypi.python.org/packages/47/bf/9045e90dac084a90aa2bb72c7d5aadefaea96a5776f445f5b5d9a7a2c78b/cutadapt-1.11.tar.gz
-  md5: 8f8a8ef85b555ac07027c8c6e702b4af
+  fn: cutadapt-1.15.tar.gz
+  url: https://pypi.python.org/packages/5a/89/a041e0a108bef64b1347e9b7126d813e61f0ce028d3db830fb7b77aab1ab/cutadapt-1.15.tar.gz
+  md5: 50baff135228644e8c68e90e2bd4e953
 
 build:
   number: 0
@@ -19,12 +19,13 @@ build:
 requirements:
   build:
     - python
+    - xopen >=0.3.2
   run:
     - python
+    - xopen >=0.3.2
 
 test:
   imports:
     - cutadapt
-    - cutadapt.scripts
   commands:
-    - cutadapt --version > /dev/null
+    - cutadapt --version
